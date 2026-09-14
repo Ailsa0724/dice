@@ -1,0 +1,101 @@
+:root {
+  --bg1: #0f172a;
+  --bg2: #1e293b;
+  --panel: rgba(255, 255, 255, 0.08);
+  --text: #e2e8f0;
+  --accent: #fbbf24;
+  --button: #f59e0b;
+  --button-hover: #fbbf24;
+  --shadow: rgba(15, 23, 42, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, var(--bg1), var(--bg2));
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+}
+
+.app {
+  width: min(90vw, 420px);
+  padding: 32px 24px;
+  text-align: center;
+  background: var(--panel);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  box-shadow: 0 20px 45px var(--shadow);
+  backdrop-filter: blur(8px);
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 24px;
+  letter-spacing: 1px;
+}
+
+.dice-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.dice {
+  width: 120px;
+  height: 120px;
+  border-radius: 24px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(145deg, #fff, #f1f5f9);
+  color: #0f172a;
+  font-size: 3rem;
+  font-weight: 700;
+  box-shadow: inset 0 6px 12px rgba(255, 255, 255, 0.7),
+    inset 0 -8px 12px rgba(148, 163, 184, 0.4),
+    0 18px 28px rgba(15, 23, 42, 0.25);
+  user-select: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dice.rolling {
+  animation: shake 0.35s ease-in-out 3;
+}
+
+@keyframes shake {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(-12deg) scale(1.08); }
+  50% { transform: rotate(12deg) scale(1.08); }
+  75% { transform: rotate(-8deg) scale(1.03); }
+}
+
+#result {
+  margin: 0 0 20px;
+  font-size: 1.2rem;
+}
+
+button {
+  border: none;
+  border-radius: 999px;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--button), var(--button-hover));
+  color: #111827;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 12px 22px rgba(245, 158, 11, 0.35);
+}
+
+button:hover {
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
