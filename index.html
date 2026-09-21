@@ -3,20 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>擲骰子</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>命運</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main class="app">
-      <h1>擲骰子</h1>
+    <div class="page">
+      <header class="topbar">
+        <h1>命運</h1>
+      </header>
 
-      <div class="dice-wrap">
-        <div id="dice" class="dice" aria-live="polite">?</div>
-      </div>
+      <main class="app">
+        <button id="rollButton" type="button">擲骰子</button>
 
-      <p id="result">點數：--</p>
-      <button id="rollBtn" type="button">擲骰子</button>
-    </main>
+        <section class="dice-area" aria-label="三顆骰子">
+          <div class="die" id="die1" aria-label="骰子 1"></div>
+          <div class="die" id="die2" aria-label="骰子 2"></div>
+          <div class="die" id="die3" aria-label="骰子 3"></div>
+        </section>
+
+        <div class="result-box">
+          <span>本次結果：</span>
+          <strong id="resultText">尚未擲骰</strong>
+        </div>
+
+        <section class="history">
+          <h2>擲骰紀錄</h2>
+          <ul id="historyList">
+            <li>尚未有紀錄</li>
+          </ul>
+        </section>
+      </main>
+    </div>
 
     <script src="script.js"></script>
   </body>
